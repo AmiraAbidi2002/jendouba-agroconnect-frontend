@@ -1,0 +1,43 @@
+.chat-container {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 0.5rem;
+}
+
+.my-msg {
+  text-align: right;
+  background-color: #c3f0ca;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.other-msg {
+  text-align: left;
+  background-color: #f0f0f0;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+input {
+  padding: 0.3rem;
+  margin-bottom: 0.2rem;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}

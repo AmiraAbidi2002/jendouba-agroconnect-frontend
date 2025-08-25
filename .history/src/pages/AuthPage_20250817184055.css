@@ -1,0 +1,116 @@
+.auth-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  font-family: sans-serif;
+}
+
+.card {
+  width: 850px;
+  height: 500px;
+  display: flex;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.8s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* left side */
+.left-panel {
+  width: 40%;
+  background: linear-gradient(135deg, #00b894, #18dcff);
+  color: white;
+  padding: 60px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.toggle-btn {
+  border: 2px solid #fff;
+  padding: 10px 30px;
+  border-radius: 30px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+/* form side */
+.form-panel {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.form {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form input {
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.submit-btn {
+  background: #00b894;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Animation: slide form panel */
+.sign-in-mode .form-panel {
+  animation: slide-left 0.8s forwards;
+}
+.sign-in-mode .left-panel {
+  animation: slide-right 0.8s forwards;
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Mobile responsive: hide left panel */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    height: auto;
+  }
+  .left-panel {
+    display: none;
+  }
+  .form-panel {
+    width: 100%;
+  }
+}
