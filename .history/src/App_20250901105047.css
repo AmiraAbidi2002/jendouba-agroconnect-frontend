@@ -1,0 +1,109 @@
+/* styles.css */
+
+/* Root container for centering content and setting max width */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Logo styles with hover effect and optional spinning animation */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Keyframes for spinning animation */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply spinning only if user has not requested reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+@media (max-width: 767px) {
+  #root {
+    padding: 1rem; /* reduce padding on mobile */
+    max-width: 100%;
+  }
+   h1 {
+    font-size: 1.5rem; /* more small for mobile */
+    line-height: 1.2;
+  }
+   
+  .card,
+  .profile-section,
+  .advice-item {
+    padding: 1rem; /* reduce padding */
+  }
+
+  .profile-section .farm-map-container {
+    height: 12rem; 
+  }
+
+  img {
+    width: 100%; /* responsive full width */
+    height: auto;
+    max-width: 100%;
+  }
+  .message-bubble-sent,
+  .message-bubble-received {
+    max-width: 90%; 
+    padding: 0.75rem !important;
+  }
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .profile-section input,
+  .profile-section textarea {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+  aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 50;
+  }
+
+  main {
+    padding: 1rem; 
+  }
+
+  .content {
+    padding: 0.5rem;
+  }
+}
+
+/* Card container styling */
+.card {
+  padding: 2em;
+}
+
+/* Subtle text styling */
+.read-the-docs {
+  color: #888;
+}
+
+

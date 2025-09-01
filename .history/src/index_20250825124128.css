@@ -1,0 +1,46 @@
+// ... (les imports restent les mêmes)
+
+export default function FarmerDashboard() {
+  // ... (le reste du code reste inchangé)
+
+  return (
+    <div className="flex min-h-screen bg-white"> {/* Fond blanc ici */}
+      {/* Sidebar - conserve sa couleur verte */}
+      <aside className="w-64 bg-[#1d4c43] text-white p-6 flex flex-col">
+        <h2 className="text-2xl font-bold mb-8 flex items-center">
+          <span className="bg-white text-[#1d4c43] p-1 rounded mr-2">🌱</span> AgroConnect
+        </h2>
+        <nav className="flex-1">
+          {menuItems.map(item => (
+            <button
+              key={item.name}
+              className={`flex items-center w-full mb-2 px-4 py-3 rounded-lg transition-all ${activeSection === item.name ? "bg-white text-[#1d4c43] font-semibold shadow-md" : "hover:bg-[#2a5c45] text-gray-100"}`}
+              onClick={() => setActiveSection(item.name)}
+            >
+              {item.icon}{item.name}
+            </button>
+          ))}
+        </nav>
+        <div className="mt-auto pt-4 border-t border-[#2a5c45] text-sm opacity-75">Logged in as Farmer</div>
+      </aside>
+
+      {/* Main Content - Fond blanc pour cette zone */}
+      <main className="flex-1 p-8 overflow-auto bg-white"> {/* Fond blanc ici */}
+        {/* Toutes les sections de contenu auront un fond blanc */}
+        {activeSection === "Crops" && (
+          <div className="bg-white rounded-xl shadow-md p-6 mb-6 text-gray-900 border border-gray-200">
+            {/* ... contenu de la section Crops */}
+          </div>
+        )}
+
+        {activeSection === "Messages" && (
+          <div className="bg-white rounded-xl shadow-md p-6 mb-6 text-gray-900 border border-gray-200">
+            <MessageList user={user} contacts={buyers} />
+          </div>
+        )}
+
+        {/* Les autres sections suivent le même pattern */}
+      </main>
+    </div>
+  );
+}
