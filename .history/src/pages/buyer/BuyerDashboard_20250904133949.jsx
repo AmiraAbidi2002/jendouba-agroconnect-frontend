@@ -117,7 +117,7 @@ const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const fetchFarmers = async () => {
     try {
-      const response = await axios.get(`${API_URL}/users?type=FARMER`);
+      const response = await axios.get("${API_URL}/users?type=FARMER");
       setFarmers(response.data);
     } catch (err) {
       console.error("Farmers recovery error:", err);
@@ -128,7 +128,7 @@ const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const fetchFarms = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get(`${API_URL}/api/farms`);
+      const response = await axios.get("${API_URL}/api/farms");
       setFarms(response.data);
     } catch (err) {
       console.error("Farms recovery error:", err);
@@ -674,11 +674,14 @@ const [isSidebarOpen, setIsSidebarOpen] = useState(false);
                               src={crop.img_url}
                               alt={crop.crop_name}
                               className="w-full max-h-24 h-auto object-cover rounded"
-                              onError={(e) => (e.target.style.display = 'none')}
-                              />
-                             ) : (
-                              <span className="text-xs text-gray-500">No Image</span>
-                              )}
+                              onError={(e) => {
+                                e.target.style.display = 'none';
+                                e.target.nextSibling.style.display = 'block';
+                              }}
+                            />
+                          ) : (
+                            <span className="text-xs text-gray-500">No Image</span>
+                          )}
                         </td>
                       </tr>
                     ))

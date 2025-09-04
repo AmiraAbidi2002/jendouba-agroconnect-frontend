@@ -674,11 +674,14 @@ const [isSidebarOpen, setIsSidebarOpen] = useState(false);
                               src={crop.img_url}
                               alt={crop.crop_name}
                               className="w-full max-h-24 h-auto object-cover rounded"
-                              onError={(e) => (e.target.style.display = 'none')}
-                              />
-                             ) : (
-                              <span className="text-xs text-gray-500">No Image</span>
-                              )}
+                              onError={(e) => {
+                                e.target.style.display = 'none';
+                                e.target.nextSibling.style.display = 'block';
+                              }}
+                            />
+                          ) : (
+                            <span className="text-xs text-gray-500">No Image</span>
+                          )}
                         </td>
                       </tr>
                     ))
