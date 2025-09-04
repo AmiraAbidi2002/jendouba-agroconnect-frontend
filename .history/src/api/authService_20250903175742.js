@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://jendouba-agroconnect-backend-1.onrender.com"; // Base URL for backend API
+const API_URL = "https://jendouba-agroconnect-backend.onrender.com"; // Base URL for backend API
 
 /**
  * Send a login request to the backend.

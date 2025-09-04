@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://jendouba-agroconnect-backend-1.onrender.com/messages"; // backend 
+const API_URL = "https://jendouba-agroconnect-backend.onrender.com/messages"; // backend 
 //Fetch all messages between the logged-in user and another user.
 export const getMessages = (userId, otherUserId) => {
   return axios.get(`${API_URL}/${userId}?with=${otherUserId}`);

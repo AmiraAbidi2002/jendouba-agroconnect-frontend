@@ -10,7 +10,7 @@ export const getMyFarm = async (userId) => {
     const token = localStorage.getItem("token");
     if (!token) throw new Error("Missing Token ");
     
-    const response = await axios.get(`https://jendouba-agroconnect-backend-1.onrender.com/api/farms/mine?userId=${userId}`, {
+    const response = await axios.get(`https://jendouba-agroconnect-backend.onrender.com/api/farms/mine?userId=${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -31,7 +31,7 @@ export const getMyFarm = async (userId) => {
 export const updateFarm = async (farmId, farmData) => {
   try {
     const token = getToken();
-    const response = await axios.put(`https://jendouba-agroconnect-backend-1.onrender.com/api/farms/${farmId}`,
+    const response = await axios.put(`https://jendouba-agroconnect-backend.onrender.com/api/farms/${farmId}`,
        farmData, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -52,7 +52,7 @@ export const updateFarm = async (farmId, farmData) => {
 export const getAllFarms = async () => {
   try {
     const token = getToken();
-    const response = await axios.get("https://jendouba-agroconnect-backend-1.onrender.com/api/farms", {
+    const response = await axios.get("https://jendouba-agroconnect-backend.onrender.com/api/farms", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

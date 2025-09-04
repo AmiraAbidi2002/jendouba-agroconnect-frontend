@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://jendouba-agroconnect-backend-1.onrender.com/api";
+const API_URL = "https://jendouba-agroconnect-backend.onrender.com/api";
 
 // Create an Axios instance with basic configuration
 const api = axios.create({
