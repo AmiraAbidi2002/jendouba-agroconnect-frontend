@@ -316,8 +316,8 @@ export default function FarmerDashboard() {
       {!isMobile && (
         <aside className="  h-full w-64 bg-[#1d4c43] text-white p-6 ">
           <img
-            src={logo}
-            alt="logo"
+            src="/src/assets/jendouba_agroconnect_logo.png"
+            alt="Logo AgroConnect"
             className="mr-2 rounded-full object-cover"
             style={{ width: "220px", height: "220px", minWidth: "220px", minHeight: "220px" }}
           />
